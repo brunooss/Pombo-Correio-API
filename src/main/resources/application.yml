@@ -1,20 +1,15 @@
 spring:
   datasource:
-    driverClassName: org.postgresql.Driver
-    username: bdvfmgtptssiyr
     password: d6bb937abc1f1f6f8456e5ad2970c9bdf8db826daab766fbe4e4885c56375356
-    url: jdbc:postgres://ec2-34-198-189-252.compute-1.amazonaws.com/dc0u5fvqah5u3u
+    url:
+postgres://bdvfmgtptssiyr:d6bb937abc1f1f6f8456e5ad2970c9bdf8db826daab766fbe4e4885c56375356@ec2-34-198-189-252.compute-1.amazonaws.com:5432/dc0u5fvqah5u3u
+    username: bdvfmgtptssiyr
   jpa:
-    ddl: update
     hibernate:
       ddl-auto: update
-      globally_quoted_identifiers: true
     properties:
       hibernate:
-        jdbc:
-          lob:
-            non_contextual_creation: true
-        dialect: org.hibernate.dialect.MySQL57Dialect
+        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show-sql: true
   thymeleaf:
