@@ -10,7 +10,7 @@ spring:
       globally_quoted_identifiers: true
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.MySQL57Dialect
         format_sql: true
     show-sql: true
   thymeleaf:
