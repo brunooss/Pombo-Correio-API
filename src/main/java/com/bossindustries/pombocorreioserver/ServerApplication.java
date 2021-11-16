@@ -1,11 +1,15 @@
 package com.bossindustries.pombocorreioserver;
 
+import com.bossindustries.pombocorreioserver.model.Message;
 import com.bossindustries.pombocorreioserver.model.User;
+import com.bossindustries.pombocorreioserver.repository.MessageRepository;
 import com.bossindustries.pombocorreioserver.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.time.LocalDateTime;
 
 @SpringBootApplication
 public class ServerApplication {
@@ -15,13 +19,14 @@ public class ServerApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(UserRepository userRepository) {
+	CommandLineRunner run(MessageRepository messageRepository) {
 		return args -> {
-			userRepository.save(
-					new User(
+			messageRepository.save(
+					new Message(
 							null,
-							"Bruno Oliveira",
-							"https://img.icons8.com/fluency/48/000000/user-male-circle.png")
+							24L,
+							"New Message!",
+							LocalDateTime.now())
 			);
 		};
 	}
