@@ -10,6 +10,9 @@ spring:
       globally_quoted_identifiers: true
     properties:
       hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
         dialect: org.hibernate.dialect.MySQL57Dialect
         format_sql: true
     show-sql: true
