@@ -1,13 +1,15 @@
 spring:
   datasource:
     password: MYSQL2o7a!@
-    url: jdbc:mysql://localhost:3306/serverdb
+    url: ${DATABASE_URL}
     username: root
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
     show-sql: true
+  thymeleaf:
+    cache: true
