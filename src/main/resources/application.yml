@@ -6,7 +6,8 @@ spring:
     url: jdbc:postgres://ec2-34-198-189-252.compute-1.amazonaws.com/dc0u5fvqah5u3u
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+      globally_quoted_identifiers: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
