@@ -21,6 +21,7 @@ import static org.springframework.http.HttpStatus.OK;
 @RestController
 @RequestMapping("/messages")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "https://pombocorreio.herokuapp.com/")
 public class MessageController {
     private final MessageServiceImplementation messageServiceImplementation;
 
