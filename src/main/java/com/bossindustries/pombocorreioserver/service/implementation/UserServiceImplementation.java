@@ -23,7 +23,7 @@ public class UserServiceImplementation implements UserService {
     @Override
     public User createUser(User user) {
 
-        log.info("Creating new user: {}", user.getName());
+        log.info("Creating new user: {}", user.getUsername());
         return userRepository.save(user);
     }
 
@@ -41,7 +41,7 @@ public class UserServiceImplementation implements UserService {
 
     @Override
     public User updateUser(User user) {
-        log.info("Updating user: {}", user.getName());
+        log.info("Updating user: {}", user.getUsername());
         return userRepository.save(user);
     }
 

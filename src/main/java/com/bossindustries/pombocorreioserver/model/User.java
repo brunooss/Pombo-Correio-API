@@ -4,11 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
-import javax.persistence.Id;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 import static javax.persistence.GenerationType.AUTO;
@@ -24,7 +21,24 @@ public class User {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
+    @Column(nullable = false, unique = true)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column(nullable = false)
     @NotEmpty(message = "Users can't have an empty name")
-    private String name;
+    private String username;
+
+    @Column(nullable = false)
+    @NotEmpty(message = "First name must be filled")
+    private String firstName;
+
+    @Column(nullable = false)
+    @NotEmpty(message = "Last name must be filled")
+    private String lastName;
+
+
     private String imageUrl;
 }
